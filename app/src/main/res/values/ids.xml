@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="category_restaurant" type="id" />
+    <item name="category_education" type="id" />
+    <item name="category_hospital" type="id" />
+    <item name="category_shopping" type="id" />
+</resources>

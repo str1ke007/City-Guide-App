@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter;
+package com.jkh.cityguideapp.HelperClasses.HomeAdapter;
 
 import android.graphics.drawable.GradientDrawable;
 

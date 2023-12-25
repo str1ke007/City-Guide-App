@@ -1,5 +1,6 @@
-package com.abhishekbansode.cityguideapp.HelperClasses.HomeAdapter;
+package com.jkh.cityguideapp.HelperClasses.HomeAdapter;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.abhishekbansode.cityguideapp.R;
+import com.jkh.cityguideapp.LocationsList.LocationsListActivity;
+import com.jkh.cityguideapp.R;
 
 import java.util.ArrayList;
 
@@ -37,6 +39,16 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ad
         holder.imageView.setImageResource(helperClass.title);
         holder.textView.setText(helperClass.description);
         holder.relativeLayout.setBackground(helperClass.image);
+
+        holder.relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(holder.relativeLayout.getContext(), LocationsListActivity.class);
+                intent.putExtra("category", helperClass.description);
+
+                view.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

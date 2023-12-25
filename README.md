@@ -13,7 +13,7 @@ Cross-platform: Works on both iOS and Android devices.
 2. Install Android Studio, the official integrated development environment (IDE) for Android app development.
 
 3. Clone the repository:
-`git clone https://github.com/Abhishek-Bansode/City-guide-app.git`
+`git clone https://github.com/Goutam192002/City-guide-app.git`
 
 4. Open the project in Android Studio.
 

@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.Common;
+package com.jkh.cityguideapp.Common;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,9 +14,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
-import com.abhishekbansode.cityguideapp.HelperClasses.SliderAdapter;
-import com.abhishekbansode.cityguideapp.R;
-import com.abhishekbansode.cityguideapp.User.UserDashboard;
+import com.jkh.cityguideapp.HelperClasses.SliderAdapter;
+import com.jkh.cityguideapp.R;
+import com.jkh.cityguideapp.User.UserDashboard;
 
 
 public class OnBoarding extends AppCompatActivity {
@@ -53,6 +53,17 @@ public class OnBoarding extends AppCompatActivity {
         // Dots
         addDots(0);
         viewPager.addOnPageChangeListener(changeListener);
+
+
+        letsGetStarted.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), UserDashboard.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     public void skip(View view) {

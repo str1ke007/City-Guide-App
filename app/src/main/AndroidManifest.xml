@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.abhishekbansode.cityguideapp">
+    package="com.jkh.cityguideapp">
 
     <application
         android:allowBackup="true"
@@ -14,10 +14,10 @@
         android:theme="@style/Theme.CityGuideApp"
         tools:targetApi="31">
         <activity
-            android:name=".Common.OnBoarding"
+            android:name="com.jkh.cityguideapp.Common.OnBoarding"
             android:exported="false" />
         <activity
-            android:name=".Common.SplashScreen"
+            android:name="com.jkh.cityguideapp.Common.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,7 +25,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".User.UserDashboard" />
+        <activity android:name="com.jkh.cityguideapp.User.UserDashboard" />
+        <activity android:name=".CreateLocation.CreateLocationActivity" />
+        <activity android:name=".LocationsList.LocationsListActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

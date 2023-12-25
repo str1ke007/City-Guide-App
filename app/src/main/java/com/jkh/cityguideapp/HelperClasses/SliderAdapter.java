@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp.HelperClasses;
+package com.jkh.cityguideapp.HelperClasses;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.abhishekbansode.cityguideapp.R;
+import com.jkh.cityguideapp.R;
 
 public class SliderAdapter extends PagerAdapter {
 

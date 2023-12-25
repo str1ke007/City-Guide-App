@@ -29,6 +29,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/baloo"
             android:text="@string/mcdonald_s"
+            android:maxHeight="30dp"
+            android:ellipsize="end"
             android:textColor="@color/colorAccent"
             android:textSize="20sp" />
 
@@ -42,7 +44,10 @@
             android:id="@+id/featured_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/demo_desc" />
+            android:text="@string/demo_desc"
+            android:maxHeight="100dp"
+            android:ellipsize="end"
+            />
 
 
     </LinearLayout>

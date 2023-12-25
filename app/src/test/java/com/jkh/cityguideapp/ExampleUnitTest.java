@@ -1,4 +1,4 @@
-package com.abhishekbansode.cityguideapp;
+package com.jkh.cityguideapp;
 
 import org.junit.Test;
 

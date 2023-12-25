@@ -1,8 +1,8 @@
 <resources>
-    <string name="app_name">City-Guide-App</string>
-    <string name="logo_name">Get A Way</string>
+    <string name="app_name">My City Info</string>
+    <string name="logo_name">My City Info</string>
     <string name="slogan_name">We will help you\nto find your way!</string>
-    <string name="powered_by_line">Powered by Abhishek Bansode</string>
+    <string name="powered_by_line"></string>
     <string name="splash_screen_img">splash_screen_img</string>
     <string name="backImage">backImage</string>
 
@@ -30,12 +30,11 @@
     <!-- Strings for DashBoard -->
 
     <!-- Strings for Categories-->
-    <string name="hotels">Hotels</string>
+    <string name="education">Education</string>
     <string name="restaurants">Restaurants</string>
     <string name="shops">Shops</string>
-    <string name="education">Education</string>
     <string name="banks">Banks</string>
-    <string name="airports">Airports</string>
+    <string name="hospital">Hospitals</string>
 
     <!-- Titles and descriptions -->
     <string name="featured_locations">All Featured Locations</string>
