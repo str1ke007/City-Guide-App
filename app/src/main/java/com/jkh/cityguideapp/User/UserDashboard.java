@@ -101,6 +101,9 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mostViewedAdapter.notifyDataSetChanged();
                 featuredAdapter.notifyDataSetChanged();
+
+//                mostViewedAdapter.startListening();  // Add this line
+//                featuredAdapter.startListening();
             }
 
             @Override
@@ -284,12 +287,4 @@ public class UserDashboard extends AppCompatActivity implements NavigationView.O
         featuredAdapter.startListening();
         mostViewedAdapter.startListening();
     }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        featuredAdapter.stopListening();
-        mostViewedAdapter.stopListening();
-    }
-
 }
