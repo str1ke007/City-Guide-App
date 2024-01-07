@@ -1,12 +1,16 @@
 package com.jkh.cityguideapp.LocationsList;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -56,6 +60,9 @@ public class LocationsListActivity extends AppCompatActivity {
                         holder.setThumbnail(model.getThumbnail());
                         holder.setPlaceName(model.getName());
                         holder.setDescription(model.getDescription());
+
+                        // Set the onClickListener for the map button
+                        holder.setMapButtonOnClickListener(model.getLocation());
                     }
 
                     @NonNull
@@ -68,7 +75,6 @@ public class LocationsListActivity extends AppCompatActivity {
 
         recyclerView.setAdapter(this.adapter);
         queryRef.addValueEventListener(new ValueEventListener() {
-
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 adapter.notifyDataSetChanged();
@@ -81,17 +87,25 @@ public class LocationsListActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        this.adapter.startListening();
+    }
+
     // Define the ViewHolder for the Location items
     public static class LocationViewHolder extends RecyclerView.ViewHolder {
         private final ImageView imageViewThumbnail;
         private final TextView textViewPlaceName;
         private final TextView textViewDescription;
+        private final Button mapBtn;
 
         public LocationViewHolder(@NonNull View itemView) {
             super(itemView);
             imageViewThumbnail = itemView.findViewById(R.id.imageViewThumbnail);
             textViewPlaceName = itemView.findViewById(R.id.textViewPlaceName);
             textViewDescription = itemView.findViewById(R.id.textViewDescription);
+            mapBtn = itemView.findViewById(R.id.mapBtn);
         }
 
         public void setThumbnail(String url) {
@@ -105,12 +119,22 @@ public class LocationsListActivity extends AppCompatActivity {
         public void setDescription(String description) {
             textViewDescription.setText(description);
         }
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        this.adapter.startListening();
+        public void setMapButtonOnClickListener(final String locationUrl) {
+            mapBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d("LocationViewHolder", "Location URL: " + locationUrl);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(locationUrl));
+                    intent.setPackage("com.google.android.apps.maps");
+                    if (intent.resolveActivity(v.getContext().getPackageManager()) != null) {
+                        v.getContext().startActivity(intent);
+                    } else {
+                        Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(locationUrl));
+                        v.getContext().startActivity(browserIntent);
+                    }
+                }
+            });
+        }
     }
 }

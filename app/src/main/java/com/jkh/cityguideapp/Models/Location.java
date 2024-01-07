@@ -19,6 +19,7 @@ public class Location {
 
     String category;
     List<String> highlights;
+    String location;
 
     public Location() {
         this.id = UUID.randomUUID().toString();
@@ -28,8 +29,13 @@ public class Location {
         this.thumbnail = "";
         this.description = "";
         this.name = "";
+        this.location = "";
     }
-    public Location(String id, int views, boolean featured, String category, String thumbnail, String name, String description, List<String> highlights, Long createdAt) {
+
+    // Update constructor to include the location field
+    public Location(String id, int views, boolean featured, String category, String thumbnail,
+                    String name, String description, List<String> highlights, Long createdAt,
+                    String location) {
         this.id = id;
         this.views = views;
         this.featured = featured;
@@ -39,8 +45,17 @@ public class Location {
         this.highlights = highlights;
         this.category = category;
         this.createdAt = createdAt;
+        this.location = location;
     }
 
+    // Add a getter and setter for the location field
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
 
     public long getCreatedAt() {
         return createdAt;
