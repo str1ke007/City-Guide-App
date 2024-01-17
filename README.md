@@ -1,4 +1,4 @@
-# City Guide App
+# My City Information Guide App
 City Guide App is a mobile application written in Java that helps users explore different cities and find interesting places to visit, eat, and shop. The app is designed to be beginner-friendly, making it a great project for newcomers to learn about mobile app development.
 
 ## Features
